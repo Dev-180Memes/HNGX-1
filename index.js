@@ -18,7 +18,7 @@ app.get('/api', (req, res) => {
 
     const utcOffset = currentDate.getTimezoneOffset();
     const validUtcTime = new Date(Date.now() - (utcOffset * 60 * 1000) - (2 * 60 * 60 * 1000));
-    const utcTimeString = validUtcTime.toISOString();
+    const utcTimeString = validUtcTime.toISOString().replace('T', ' ').replace('Z', '');
 
     const githubFileUrl = "https://github.com/Dev-180Memes/HNGX-1/blob/main/index.js";
     const githubRepoUrl = "https://github.com/Dev-180Memes/HNGX-1";
